@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script
+    ><![endif]-->
+    <title>Lineage 2 Era of Heroes Website HTML Template</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=1280, maximum-scale=1" />
+    <link href="css/css-reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="top-panel">
+      <div class="logo">
+        <a href=""><img src="images/logo.png" alt=""/></a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="">Download files</a></li>
+          <li class="active"><a href="/register">Register</a></li>
+          <li><a href="">About server</a></li>
+        </ul>
+      </div>
+      <div class="login">
+        <a href="">Login</a> or <a href="" class="sign">Sign Up</a>
+      </div>
+    </div>
+    <!-- top-panel -->
+    <div class="wrapper">
+      <main>
+        <div class="register">
+          <form action="">
+            <h3 class="form-title">Register Account</h3>
+            <div class="input-field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" />
+            </div>
+            <button type="submit" class="form-button">Create</button>
+          </form>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="f-menu">
+          <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Terms & Conditions</a></li>
+            <li><a href="">Privacy Polity</a></li>
+            <li><a href="">User Agreement</a></li>
+            <li><a href="">Community</a></li>
+          </ul>
+        </div>
+        <div class="f-info">
+          <div class="f-logo">
+            <a href=""><img src="images/f-logo.png" alt=""/></a>
+          </div>
+          <div class="f-text">
+            Copyright © 2018. All rights reserved. <br />
+            Lineage 2 and all associated logos and designs are trademarks or
+            registered trademarks of NCSOFT Corporation. <br />
+            All other trademarks or registered trademarks are property of theirs
+            respective owners. It's only a Test Server. <br />
+            All rights belong to NCSOFT.
+          </div>
+        </div>
+      </footer>
+      <!-- .footer -->
+    </div>
+    <!-- .wrapper -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script>
+      var width = 714;
+      var count = 1;
+
+      var carousel = document.getElementById("carousel");
+      var list = carousel.querySelector("ul");
+      var listElems = carousel.querySelectorAll("li");
+
+      var position = 0;
+
+      carousel.querySelector(".prev").onclick = function() {
+        position = Math.min(position + width * count, 0);
+        list.style.marginLeft = position + "px";
+      };
+
+      carousel.querySelector(".next").onclick = function() {
+        position = Math.max(
+          position - width * count,
+          -width * (listElems.length - count)
+        );
+        list.style.marginLeft = position + "px";
+      };
+    </script>
+  </body>
+</html>
