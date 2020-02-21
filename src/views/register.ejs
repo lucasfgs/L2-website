@@ -5,10 +5,11 @@
     <!--[if lt IE 9
       ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script
     ><![endif]-->
-    <title>Lineage 2 Era of Heroes Website HTML Template</title>
+    <title>Lineage 2</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=1280, maximum-scale=1" />
+    <link href="css/iziModal.min.css" rel="stylesheet" />
     <link href="css/css-reset.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
@@ -34,14 +35,74 @@
     <div class="wrapper">
       <main>
         <div class="register">
-          <form action="">
+          <form action="/register" method="POST">
             <h3 class="form-title">Register Account</h3>
+            <div class="input-field">
+              <% if(errors) errors.map(erro => { %>
+              <label class="error"><%= erro.msg %> </label>
+
+              <% }) %>
+            </div>
+
             <div class="input-field">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" />
             </div>
-            <button type="submit" class="form-button">Create</button>
+            <div class="input-field">
+              <label for="email">E-mail</label>
+              <input type="text" id="email" name="email" />
+            </div>
+            <div class="input-field">
+              <label for="login">Login</label>
+              <input type="text" id="login" name="login" />
+            </div>
+            <div class="input-field">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" />
+            </div>
+            <div class="checkbox-field">
+              <input
+                type="checkbox"
+                id="cbx"
+                name="terms"
+                style="display: none;"
+              />
+              <label for="cbx" class="check">
+                <svg width="18px" height="18px" viewBox="0 0 18 18">
+                  <path
+                    d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"
+                  ></path>
+                  <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+              </label>
+              <label class="title"
+                >Are you agree with
+                <span
+                  class="rule-highlight"
+                  data-izimodal-open="#modal"
+                  data-izimodal-transitionin="fadeInDown"
+                  >Terms & Conditions</span
+                >?</label
+              >
+            </div>
+
+            <button type="submit" class="form-button">Create Account</button>
           </form>
+        </div>
+        <div id="modal" style="display: none;">
+          <h3>Rules</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            venenatis sagittis mauris a vehicula. Donec sapien nunc, lobortis at
+            tempus quis, interdum at sapien. Morbi nec tellus enim. Sed odio
+            ligula, rhoncus et tristique nec, laoreet vel metus. In lectus nisl,
+            euismod quis dui id, facilisis gravida tellus. Etiam vel purus a
+            ipsum porta suscipit ac facilisis est. Pellentesque vehicula in
+            augue viverra congue. Nulla iaculis, purus sit amet interdum
+            sollicitudin, dolor urna feugiat massa, congue sagittis urna ligula
+            vel elit. Sed condimentum sed nisl congue rutrum. Praesent a nibh at
+            sapien posuere commodo.
+          </p>
         </div>
       </main>
       <footer class="footer">
@@ -72,29 +133,8 @@
     </div>
     <!-- .wrapper -->
     <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/iziModal.min.js"></script>
     <script src="js/slider.js"></script>
-    <script>
-      var width = 714;
-      var count = 1;
-
-      var carousel = document.getElementById("carousel");
-      var list = carousel.querySelector("ul");
-      var listElems = carousel.querySelectorAll("li");
-
-      var position = 0;
-
-      carousel.querySelector(".prev").onclick = function() {
-        position = Math.min(position + width * count, 0);
-        list.style.marginLeft = position + "px";
-      };
-
-      carousel.querySelector(".next").onclick = function() {
-        position = Math.max(
-          position - width * count,
-          -width * (listElems.length - count)
-        );
-        list.style.marginLeft = position + "px";
-      };
-    </script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

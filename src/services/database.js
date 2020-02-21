@@ -1,7 +1,5 @@
 import Sequelize from "sequelize";
 
-import Character from "../models/characters";
-
 const connection = new Sequelize({
   dialect: process.env.DB_DIALECT,
   host: process.env.DB_HOST,
