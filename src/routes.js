@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { check, validationResult, ValidationError } from "express-validator";
 import { getOnlinePlayers } from "./controllers/CharacterController";
+import { createAccount } from "./controllers/AccountController";
 import { getGameserverStatus } from "./services/gameserver";
 
 const routes = Router();
@@ -37,6 +38,7 @@ routes.post(
       .withMessage("Please confirm our terms & conditions")
   ],
   async (req, res) => {
+    const { name, email, login, password } = req.body;
     const result = validationResult(req);
 
     if (result.errors) {
@@ -48,11 +50,13 @@ routes.post(
           errors
         });
       }
-    } else {
-      res.render("register", {
-        success: true
-      });
     }
+
+    let account = await createAccount(name, email, login, password);
+    console.log(account);
+    res.render("register", {
+      success: true
+    });
   }
 );
 
