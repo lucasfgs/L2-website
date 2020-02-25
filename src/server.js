@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
+import serveIndex from "serve-index";
 
 import routes from "./routes";
 import gameModels from "./models/game";
@@ -12,6 +13,7 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use("/updater", serveIndex("public/updater"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(routes);
