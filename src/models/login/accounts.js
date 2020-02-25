@@ -31,12 +31,17 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: '1'
     },
     email: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(40),
       allowNull: true
     },
     name: {
       type: DataTypes.STRING(20),
       allowNull: true
+    },
+    isActive: {
+      type: DataTypes.INTEGER(255),
+      allowNull: true,
+      defaultValue: '0'
     }
   }, {
     tableName: 'accounts'

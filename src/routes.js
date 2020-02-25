@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check, validationResult, ValidationError } from "express-validator";
 import { getOnlinePlayers } from "./controllers/CharacterController";
-import { createAccount } from "./controllers/AccountController";
+import AccountController from "./controllers/AccountController";
 import { getGameserverStatus } from "./services/gameserver";
 
 const routes = Router();
@@ -40,29 +40,7 @@ routes.post(
       .exists()
       .withMessage("Please confirm our terms & conditions")
   ],
-  async (req, res) => {
-    const { name, email, login, password } = req.body;
-    const result = validationResult(req);
-
-    if (result.errors) {
-      const errors = result.errors;
-
-      if (!result.isEmpty()) {
-        //response validate data to register.ejs
-        res.render("register", {
-          errors
-        });
-      }
-    }
-
-    let account = await createAccount(name, email, login, password);
-    if (!account)
-      res.render("register", { errors: [{ msg: "E-mail already exists!" }] });
-    console.log(account);
-    res.render("register", {
-      success: true
-    });
-  }
+  AccountController.createAccount
 );
 
 export default routes;
