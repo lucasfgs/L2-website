@@ -43,4 +43,8 @@ routes.post(
   AccountController.createAccount
 );
 
+routes.get("/updater/:file", (req, res) => {
+  const { file } = req.params;
+  res.download(`src/updater/${file}`);
+});
 export default routes;
