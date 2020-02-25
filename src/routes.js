@@ -56,6 +56,8 @@ routes.post(
     }
 
     let account = await createAccount(name, email, login, password);
+    if (!account)
+      res.render("register", { errors: [{ msg: "E-mail already exists!" }] });
     console.log(account);
     res.render("register", {
       success: true
