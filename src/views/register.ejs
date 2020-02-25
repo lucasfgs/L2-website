@@ -35,6 +35,15 @@
     <div class="wrapper">
       <main>
         <div class="register">
+          <% if (locals.success) { %>
+          <div class="register--success">
+            <h3 class="success--title">Account created successful!</h3>
+            <p class="success--description">
+              Check your e-mail for account activation.
+            </p>
+          </div>
+
+          <% } else { %>
           <form action="/register" method="POST">
             <h3 class="form-title">Register Account</h3>
             <div class="input-field">
@@ -88,6 +97,7 @@
 
             <button type="submit" class="form-button">Create Account</button>
           </form>
+          <% } %>
         </div>
         <div id="modal" style="display: none;">
           <h3>Rules</h3>
