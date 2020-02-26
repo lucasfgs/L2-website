@@ -614,7 +614,7 @@ button {
 .register--success {
   width: 450px;
   height: 80px;
-  background-color: #55efc4;
+  background-color: #000;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -628,12 +628,14 @@ button {
   font-size: 25px;
   margin: 0;
   font-weight: 700;
+  color: #55efc4;
 }
 
 .success--description {
   margin-top: 5px;
   font-size: 18px;
   font-weight: 500;
+  color: #55efc4;
 }
 
 .register form {
