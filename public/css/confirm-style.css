@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+body {
+  background-color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #545964;
+  line-height: 1;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: red;
+  background: url(../images/confirm-bg.jpg);
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 500px;
+  color: #ffc45f;
+  font-weight: none;
+}
+
+.container--title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.container--divider {
+  border: 1px solid #ffc45f;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.container--description {
+  padding-top: 20px;
+  width: 350px;
+  text-align: center;
+  margin: auto;
+}
+
+.button-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.back-button {
+  color: #ffc45f;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.back-button img {
+  width: 16px;
+  height: 16px;
+  color: #ffc45f;
+  margin-right: 5px;
+}
+
+.login-button {
+  width: 150px;
+  height: 40px;
+  background-image: linear-gradient(#683c18, #583419, #4b2d1a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+
+  color: #d8cbb5;
+  text-decoration: none;
+}
+
+.login-button:hover {
+  background-image: linear-gradient(#64350c, #48260e, #3d2113);
+}

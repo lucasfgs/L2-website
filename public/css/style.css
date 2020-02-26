@@ -603,6 +603,39 @@ button {
 .f-info .f-text {
   line-height: 1.2;
 }
+
+.register {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register--success {
+  width: 450px;
+  height: 80px;
+  background-color: #55efc4;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+.success--title {
+  font-size: 25px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.success--description {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .register form {
   width: 450px;
   height: 550px;
@@ -618,7 +651,8 @@ button {
   text-align: center;
   font-weight: 500;
   font-size: 30px;
-  padding: 25px 0;
+  padding-top: 25px;
+  margin: 0;
 }
 
 .register .error {

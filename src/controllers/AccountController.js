@@ -39,15 +39,44 @@ export default {
     });
 
     if (account) {
+      const hash = await bcrypt.hash(email, 2);
+
+      const expireDate = new Date(Date.now());
+
+      await model.account_token.create({
+        login: account.login,
+        token: hash,
+        createdAt: new Date(Date.now()),
+        expires: expireDate.setHours(expireDate.getHours() + 2)
+      });
+
       sendMail(
         email,
         "Account creation",
-        registerAccount(name, login, password)
+        registerAccount(name, login, password, hash)
       );
       res.render("register", {
         success: true
       });
       return;
     }
+  },
+
+  async confirmAccount(req, res) {
+    const { token: hash } = req.query;
+
+    const token = await model.account_token.findOne({ where: { token: hash } });
+
+    if (!token) return;
+
+    const account = await model.accounts.findOne({
+      where: { login: token.login }
+    });
+
+    if (!account) return;
+
+    const updatedAccount = await account.update({ isActive: 1 });
+
+    res.render("confirm", { success: true });
   }
 };
