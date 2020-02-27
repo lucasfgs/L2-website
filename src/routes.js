@@ -7,14 +7,14 @@ import { getGameserverStatus } from "./services/gameserver";
 const routes = Router();
 
 routes.get("/", async (req, res) => {
-  const serverStatus = await getGameserverStatus();
-  if (serverStatus === "Offline") {
-    res.render("home", { playersOnline: 0, serverStatus });
-  } else {
+  getGameserverStatus().then(serverStatus => {
     const playersOnline = await getOnlinePlayers();
 
     res.render("home", { playersOnline, serverStatus });
-  }
+  }).catch(error => {
+    res.render("home", { playersOnline: 0, serverStatus: "Offline" });
+
+  });
 });
 
 routes.get("/register", async (req, res) => {

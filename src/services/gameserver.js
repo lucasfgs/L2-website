@@ -1,6 +1,6 @@
 import net from "net";
 
-function getGameserverStatus(cb) {
+function getGameserverStatus() {
   return new Promise((resolve, reject) => {
     let status = "";
     const client = net.connect(
