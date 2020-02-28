@@ -1,20 +1,21 @@
 import { Router } from "express";
-import { check, validationResult, ValidationError } from "express-validator";
-import { getOnlinePlayers } from "./controllers/CharacterController";
-import AccountController from "./controllers/AccountController";
-import { getGameserverStatus } from "./services/gameserver";
+import { check } from "express-validator";
+import { getOnlinePlayers } from "../controllers/CharacterController";
+import AccountController from "../controllers/AccountController";
+import { getGameserverStatus } from "../services/gameserver";
 
 const routes = Router();
 
 routes.get("/", async (req, res) => {
-  getGameserverStatus().then(serverStatus => {
-    const playersOnline = await getOnlinePlayers();
+  getGameserverStatus()
+    .then(async serverStatus => {
+      const playersOnline = await getOnlinePlayers();
 
-    res.render("home", { playersOnline, serverStatus });
-  }).catch(error => {
-    res.render("home", { playersOnline: 0, serverStatus: "Offline" });
-
-  });
+      res.render("home", { playersOnline, serverStatus });
+    })
+    .catch(error => {
+      res.render("home", { playersOnline: 0, serverStatus: "Offline" });
+    });
 });
 
 routes.get("/register", async (req, res) => {
