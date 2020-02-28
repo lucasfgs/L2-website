@@ -2,6 +2,7 @@ import { Op } from "sequelize";
 import jwt from "jsonwebtoken";
 import model from "../models/login";
 import passwordEncrypt from "../utils/passwordEncrypt";
+import { verifyJWTToken } from "../utils/verifyJwt";
 
 export default {
   async login(req, res) {
@@ -22,10 +23,22 @@ export default {
       const { login, name } = user;
       const token = jwt.sign({ login, email, name }, process.env.JWT_SECRET);
 
-      res.json({ token });
+      res.json({ token, user: { login, name, email } });
     } else {
       res.json({ error: true, message: "Invalid credentials" });
       return;
     }
+  },
+
+  async isLogged(req, res) {
+    const { token } = req.body;
+
+    verifyJWTToken(token)
+      .then(decodedToken => {
+        res.json({ success: true });
+      })
+      .catch(err => {
+        res.json({ success: false });
+      });
   }
 };

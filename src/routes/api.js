@@ -5,4 +5,6 @@ const routes = Router();
 
 routes.post("/login", AuthController.login);
 
+routes.post("/checkLogin", AuthController.isLogged);
+
 export default routes;
