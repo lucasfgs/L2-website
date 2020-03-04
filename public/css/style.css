@@ -142,6 +142,15 @@ button {
   background: rgba(141, 162, 178, 0.6);
   left: 0px;
 }
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 40px;
+}
+.logo a img {
+  width: 200px;
+}
 .menu li {
   display: inline-block;
   margin: 0px 20px;
@@ -769,4 +778,36 @@ button {
   stroke-dashoffset: 42;
   transition: all 0.2s linear;
   transition-delay: 0.15s;
+}
+
+#modal {
+  display: flex;
+  justify-content: center;
+}
+
+#modal .title {
+  text-align: center;
+}
+
+#modal .text {
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+}
+
+.text .subtitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.text .topic {
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.text .single-topic {
+  font-weight: bold;
+  margin: 50px 0;
+}
+.text .subtopic {
+  margin: 10px 0;
 }
