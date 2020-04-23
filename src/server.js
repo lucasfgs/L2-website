@@ -6,8 +6,7 @@ import serveIndex from "serve-index";
 import cors from "cors";
 
 import { Site, Api } from "./routes";
-import gameModels from "./models/game";
-import loginModels from "./models/login";
+import dbModels from "./models";
 
 const app = express();
 
@@ -21,8 +20,6 @@ app.use(bodyParser.json());
 app.use(Site);
 app.use("/api", Api);
 
-gameModels.sequelize.sync().then(() => {
-  loginModels.sequelize.sync().then(() => {
-    app.listen(process.env.PORT || 80, () => console.log("Listening"));
-  });
+dbModels.sequelize.sync().then(() => {
+  app.listen(process.env.PORT || 80, () => console.log("Listening"));
 });

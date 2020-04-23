@@ -1,6 +1,6 @@
 import { Op } from "sequelize";
 import jwt from "jsonwebtoken";
-import model from "../models/login";
+import model from "../models";
 import passwordEncrypt from "../utils/passwordEncrypt";
 import { verifyJWTToken } from "../utils/verifyJwt";
 
@@ -16,7 +16,7 @@ export default {
     const encryptedPassword = passwordEncrypt(password);
 
     const user = await model.accounts.findOne({
-      where: { [Op.and]: { email, password: encryptedPassword } }
+      where: { [Op.and]: { email, password: encryptedPassword } },
     });
 
     if (user) {
@@ -34,11 +34,11 @@ export default {
     const { token } = req.body;
 
     verifyJWTToken(token)
-      .then(decodedToken => {
+      .then((decodedToken) => {
         res.json({ success: true });
       })
-      .catch(err => {
+      .catch((err) => {
         res.json({ success: false });
       });
-  }
+  },
 };

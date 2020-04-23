@@ -1,6 +1,6 @@
 import { Op } from "sequelize";
 import bcrypt from "bcrypt";
-import model from "../models/login";
+import model from "../models";
 import passwordEncrypt from "../utils/passwordEncrypt";
 import { sendMail } from "../services/mail";
 import { registerAccount } from "../mailTemplates";
@@ -16,17 +16,17 @@ export default {
 
       if (!result.isEmpty()) {
         res.render("register", {
-          errors
+          errors,
         });
         return;
       }
     }
     const emailOrLoginExists = await model.accounts.findOne({
-      where: { [Op.or]: { login, email } }
+      where: { [Op.or]: { login, email } },
     });
     if (emailOrLoginExists) {
       res.render("register", {
-        errors: [{ msg: "E-mail or login already exists!" }]
+        errors: [{ msg: "E-mail or login already exists!" }],
       });
       return;
     }
@@ -35,7 +35,7 @@ export default {
       name,
       email,
       login,
-      password: passwordEncrypt(password)
+      password: passwordEncrypt(password),
     });
 
     if (account) {
@@ -47,7 +47,7 @@ export default {
         login: account.login,
         token: hash,
         createdAt: new Date(Date.now()),
-        expires: expireDate.setHours(expireDate.getHours() + 2)
+        expires: expireDate.setHours(expireDate.getHours() + 2),
       });
 
       sendMail(
@@ -56,7 +56,7 @@ export default {
         registerAccount(name, login, password, hash)
       );
       res.render("register", {
-        success: true
+        success: true,
       });
       return;
     }
@@ -70,7 +70,7 @@ export default {
     if (!token) return;
 
     const account = await model.accounts.findOne({
-      where: { login: token.login }
+      where: { login: token.login },
     });
 
     if (!account) return;
@@ -78,5 +78,5 @@ export default {
     const updatedAccount = await account.update({ isActive: 1 });
 
     res.render("confirm", { success: true });
-  }
+  },
 };
