@@ -4,7 +4,8 @@
   "main": "src/server.js",
   "license": "MIT",
   "scripts": {
-    "start": "sucrase-node src/server.js"
+    "dev": "sucrase-node src/server.js",
+    "start": "node build/server.js"
   },
   "dependencies": {
     "bcrypt": "^4.0.0",
