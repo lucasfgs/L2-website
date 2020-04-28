@@ -1,1 +1,7 @@
-{ "sites": [{ "subject": "l2thorin.com", "altnames": ["l2thorin.com"] }] }
+{
+  "sites": [
+    { "subject": "l2thorin.com", "altnames": ["l2thorin.com"] },
+    { "subject": "127.0.0.1", "altnames": ["127.0.0.1"] },
+    { "subject": "187.59.156.202", "altnames": ["187.59.156.202"] }
+  ]
+}
