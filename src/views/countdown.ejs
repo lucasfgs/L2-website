@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lineage II Thorin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/css-reset.css" rel="stylesheet" />
+    <link href="css/countdown.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Display the countdown timer in an element -->
+    <img src="images/logo5b.png" alt="" srcset="" />
+    <h1>Sua aventura começa em:</h1>
+    <canvas id="countdown"></canvas>
+    <div class="info">
+      <div class="server">
+        <h1 class="title">Informações</h1>
+        <div class="content">
+          <div class="column">
+            <div class="content-data">
+              <span class="subtitle">Rates</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">XP-SP :</span>
+              <div class="info-value">80x</div>
+            </div>
+            <div class="content-data">
+              <span class="info-title">Adena :</span>
+              <div class="info-value">100x</div>
+            </div>
+            <div class="content-data">
+              <span class="info-title">Raidboss :</span>
+              <div class="info-value">1x</div>
+            </div>
+            <div class="content-data">
+              <span class="subtitle">Buffs</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">Slots 20+4 12</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">Buffer Scheme</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">Buffer VIP/Buffer VIP Clan</span>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content-data">
+              <span class="subtitle">NPCS</span>
+            </div>
+
+            <div class="content-data">
+              <span class="info-title">GK Global </span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">GM Shop</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">Nobbles Manager</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">Werehouse no Centro</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">NPC Augmentation</span>
+            </div>
+            <div class="content-data">
+              <span class="info-title">NPC Skill Enchanting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="social-media">
+      <h1 class="title">Nos acompanhe no:</h1>
+      <div class="medias">
+        <a
+          class="media-icon"
+          href="https://www.youtube.com/channel/UCioCuL9oEzgVKzb1QhQFMFw"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a
+          class="media-icon"
+          href="https://www.facebook.com/Lineage-2-Thorin-111756093759041/"
+          ><i class="fab fa-facebook-square"></i
+        ></a>
+        <a class="media-icon" href="https://discord.gg/BmYHDcV"
+          ><i class="fab fa-discord"></i
+        ></a>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var ringer = {
+        countdown_to: "5/2/2020 14:00:00",
+        rings: {
+          DAYS: {
+            s: 86400000, // mseconds in a day,
+            max: 365,
+          },
+          HOURS: {
+            s: 3600000, // mseconds per hour,
+            max: 24,
+          },
+          MINUTES: {
+            s: 60000, // mseconds per minute
+            max: 60,
+          },
+          SECONDS: {
+            s: 1000,
+            max: 60,
+          },
+        },
+        r_count: 4,
+        r_spacing: 10, // px
+        r_size: 100, // px
+        r_thickness: 2, // px
+        update_interval: 11, // ms
+
+        init: function () {
+          $r = ringer;
+          $r.cvs = document.getElementById("countdown");
+
+          $r.size = {
+            w:
+              ($r.r_size + $r.r_thickness) * $r.r_count +
+              $r.r_spacing * ($r.r_count - 1),
+            h: $r.r_size + $r.r_thickness,
+          };
+
+          $r.cvs.setAttribute("width", $r.size.w);
+          $r.cvs.setAttribute("height", $r.size.h);
+          $r.ctx = $r.cvs.getContext("2d");
+          $r.cvs = $($r.cvs);
+          $r.ctx.textAlign = "center";
+          $r.actual_size = $r.r_size + $r.r_thickness;
+          $r.countdown_to_time = new Date($r.countdown_to).getTime();
+          $r.cvs.css({ width: $r.size.w + "px", height: $r.size.h + "px" });
+          $r.go();
+        },
+        ctx: null,
+        go: function () {
+          var idx = 0;
+
+          $r.time = new Date().getTime() - $r.countdown_to_time;
+
+          for (var r_key in $r.rings) $r.unit(idx++, r_key, $r.rings[r_key]);
+
+          setTimeout($r.go, $r.update_interval);
+        },
+        unit: function (idx, label, ring) {
+          var x,
+            y,
+            value,
+            ring_secs = ring.s;
+          value = parseFloat($r.time / ring_secs);
+          $r.time -= Math.round(parseInt(value)) * ring_secs;
+          value = Math.abs(value);
+
+          x = $r.r_size * 0.5 + $r.r_thickness * 0.5;
+          x += +(idx * ($r.r_size + $r.r_spacing + $r.r_thickness));
+          y = $r.r_size * 0.5;
+          y += $r.r_thickness * 0.5;
+
+          // calculate arc end angle
+          var degrees = 360 - (value / ring.max) * 360.0;
+          var endAngle = degrees * (Math.PI / 180);
+
+          $r.ctx.save();
+
+          $r.ctx.translate(x, y);
+          $r.ctx.clearRect(
+            $r.actual_size * -0.5,
+            $r.actual_size * -0.5,
+            $r.actual_size,
+            $r.actual_size
+          );
+
+          // first circle
+          $r.ctx.strokeStyle = "rgba(128,128,128,0.4)";
+          $r.ctx.beginPath();
+          $r.ctx.arc(0, 0, $r.r_size / 2, 0, 2 * Math.PI, 2);
+          $r.ctx.lineWidth = $r.r_thickness;
+          $r.ctx.stroke();
+
+          // second circle
+          $r.ctx.strokeStyle = "rgba(253, 128, 1, 0.9)";
+          $r.ctx.beginPath();
+          $r.ctx.arc(0, 0, $r.r_size / 2, 0, endAngle, 1);
+          $r.ctx.lineWidth = $r.r_thickness;
+          $r.ctx.stroke();
+
+          // label
+          $r.ctx.fillStyle = "#ffffff";
+
+          $r.ctx.font = "12px Helvetica";
+          $r.ctx.fillText(label, 0, 23);
+          $r.ctx.fillText(label, 0, 23);
+
+          $r.ctx.font = "bold 40px Helvetica";
+          $r.ctx.fillText(Math.floor(value), 0, 10);
+
+          $r.ctx.restore();
+        },
+      };
+
+      ringer.init();
+    </script>
+  </body>
+</html>
