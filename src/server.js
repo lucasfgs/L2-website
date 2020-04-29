@@ -6,6 +6,7 @@ import serveIndex from "serve-index";
 import favicon from "express-favicon";
 import cors from "cors";
 import https from "https";
+import http from "http";
 import fs from "fs";
 
 import { Site, Api } from "./routes";
@@ -33,5 +34,14 @@ dbModels.sequelize.sync().then(() => {
       },
       app
     )
-    .listen(process.env.PORT || 80, () => console.log("Listening"));
+    .listen(443, () => console.log("SSL server running"));
+
+  http
+    .createServer((req, res) => {
+      res.writeHead(301, {
+        Location: "https://" + req.headers["host"] + req.url,
+      });
+      res.end();
+    })
+    .listen(80, () => console.log("HTTP redirection server running"));
 });
