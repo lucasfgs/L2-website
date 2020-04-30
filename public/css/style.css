@@ -811,80 +811,88 @@ button {
   margin: 10px 0;
 }
 
-.download {
-  position: relative;
+section {
   width: 60%;
-  margin: auto;
-  height: 580px;
-  margin-top: 50px;
   margin-left: 500px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
 }
-.download .background .content {
 
-}
-.download .background {
-  background-color: #c8d6e5;
-  opacity: 0.9;
+section #como-jogar {
+  position: relative;
   width: 100%;
-  height: 580px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
+  margin: auto;
+  height: 250px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
+#como-jogar .background {
+  background-color: #dbe4ee;
+  width: 100%;
+  height: 250px;
+ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+#como-jogar h1 {
+  padding-top: 15px;
+  margin-bottom: 20px;
+  text-transform: none;
+}
+
+#como-jogar p {
+  text-align: justify;
+  padding: 0 30px;
+  line-height: 20px;
+}
+
+.download{
+  display: flex;
+  flex-direction: row;
+}
+#patch, #client{
+position: relative;
+  height: 150px;
+  width: 48%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#patch .background, #client .background {
+  background-color: #dbe4ee;
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
 
 .download--subtitle {
-  text-transform: uppercase;
   font-size: 30px;
   padding-left: 30px;
+  padding-top: 10px;
 }
 
-.download--subtitle:not(:first-of-type) {
-  margin-top: 20px;
-}
 
-.download h1 {
-  padding-top: 20px;
-  margin-bottom: 20px;
-}
 
-.download h1 span:before {
-  content: "";
-  position: absolute;
-  background: url(../images/left-title-icon.png) no-repeat;
-  width: 260px;
-  height: 23px;
-  left: -290px;
-  top: 50%;
-  margin-top: -10px;
-}
-.download h1 span:after {
-  content: "";
-  position: absolute;
-  background: url(../images/right-title-icon.png) no-repeat;
-  width: 260px;
-  height: 23px;
-  right: -290px;
-  top: 50%;
-  margin-top: -10px;
-}
 
 .download--cards {
   display: flex;
-  padding: 0 30px;
+  justify-content: space-around;
 }
 
 .download--card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px;
 }
 
 .download--card:not(:last-child) {
@@ -892,7 +900,7 @@ button {
 }
 
 .download--card__header img {
-  width: 100px;
+  width: 50px;
 }
 
 .download--card__header p {
