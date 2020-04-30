@@ -16,18 +16,18 @@
   <body>
     <div class="top-panel">
       <div class="logo">
-        <a href=""><img src="images/logo5.png" alt=""/></a>
+        <a href="/"><img src="images/logo5.png" alt=""/></a>
       </div>
       <div class="menu">
         <ul>
           <li class="active"><a href="">Home</a></li>
-          <li><a href="/download">Download files</a></li>
+          <li><a href="/download">Downloads</a></li>
           <li><a href="/register">Register</a></li>
           <li><a href="">About server</a></li>
         </ul>
       </div>
       <div class="login">
-        <a href="">Login</a> or <a href="" class="sign">Sign Up</a>
+        <a href="">Login</a>
       </div>
     </div>
     <!-- top-panel -->
@@ -38,7 +38,6 @@
           <%=playersOnline%> Players
         </div>
         <!-- status-block -->
-        <div class="era-text"></div>
         <!-- era-text -->
       </header>
       <!-- .header-->
@@ -49,30 +48,22 @@
             <div class="prev"></div>
             <div class="slides">
               <div class="slide active">
-                <img src="images/slider-img.jpg" alt="" />
+                <img src="images/slider-1.png" alt="" />
               </div>
               <div class="slide">
-                <img src="images/slider-img.jpg" alt="" />
+                <img src="images/slider-2.png" alt="" />
               </div>
               <div class="slide">
-                <img src="images/slider-img.jpg" alt="" />
+                <img src="images/slider-3.png" alt="" />
               </div>
             </div>
             <div class="navigation"></div>
           </div>
           <!-- slider -->
           <div class="news-block">
-            <div class="more-icon">
-              <a href="">+</a>
-            </div>
             <div class="tabs">
               <input id="all-news" type="radio" name="tabs" checked />
-              <label for="all-news" title="All news">All news</label>
-              <input id="maintenance" type="radio" name="tabs" />
-              <label for="maintenance" title="Maintenance">Maintenance</label>
-              <input id="updates" type="radio" name="tabs" />
-              <label for="updates" title="Updates">Updates</label>
-
+              <label for="all-news" title="All news">Noticias</label>
               <div id="all-news-content" class="tab">
                 <ul>
                   <li>
@@ -210,22 +201,22 @@
         <div class="block-btn">
           <div class="game-info game">
             <div class="g-text">
-              <span class="game-g">GAME</span>
-              <span class="game-t">INFORMATION</span>
+              <span class="game-g">RANKING</span>
+              <span class="game-t">PVP</span>
               <a href="">GO</a>
             </div>
           </div>
           <div class="game-stats game">
             <div class="g-text">
-              <span class="game-g">GAME</span>
-              <span class="game-t">STATS</span>
+              <span class="game-g">RANKING</span>
+              <span class="game-t"> PK</span>
               <a href="">GO</a>
             </div>
           </div>
           <div class="game-community game">
             <div class="g-text">
-              <span class="game-g">GAME</span>
-              <span class="game-t">COMMUNITY</span>
+              <span class="game-g">SPAWN</span>
+              <span class="game-t">RAID BOSS</span>
               <a href="">GO</a>
             </div>
           </div>
@@ -233,43 +224,26 @@
         <!-- block-btn -->
         <div class="hr"></div>
         <div class="media-block">
-          <div class="art-block">
-            <div class="media-title">Artwork <a href="">+</a></div>
-            <p>
-              <a href=""><img src="images/art-img-1.jpg" alt=""/></a>
-            </p>
-            <p>
-              <a href=""><img src="images/art-img-2.jpg" alt=""/></a>
-            </p>
-          </div>
-          <div class="gameplay-block">
-            <div class="media-title">Gameplay <a href="">+</a></div>
-            <p>
-              <a href=""><img src="images/gameplay-img-1.jpg" alt=""/></a>
-            </p>
-            <p>
-              <a href=""><img src="images/gameplay-img-2.jpg" alt=""/></a>
-            </p>
-          </div>
+          <iframe src="https://discordapp.com/widget?id=682678860680265843&theme=dark" width="350" height="530" allowtransparency="true" frameborder="0"></iframe>
+          <div class='fb-insta'>
+          <div class="fb-page" data-href="https://www.facebook.com/Lineage-2-Thorin-111756093759041/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Lineage-2-Thorin-111756093759041/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Lineage-2-Thorin-111756093759041/">Lineage 2 Thorin</a></blockquote></div>
+          <iframe src="http://instagram.com/p/B_mWbbVgFrc/embed" width="340" height="380" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
         </div>
         <!-- art-block -->
         <div class="feature-block">
           <h1>
             <span
-              >Server <br />
-              <b>Features</b></span
+              >Galeria de<br />
+              <b>Videos</b></span
             >
           </h1>
           <div id="carousel" class="carousel">
             <button class="arrow prev"></button>
             <div class="gallery">
               <ul class="images">
-                <li><img src="images/f-slider-img.jpg" alt="" /></li>
-                <li><img src="images/f-slider-img.jpg" alt="" /></li>
-                <li><img src="images/f-slider-img.jpg" alt="" /></li>
-                <li><img src="images/f-slider-img.jpg" alt="" /></li>
-                <li><img src="images/f-slider-img.jpg" alt="" /></li>
-                <li><img src="images/f-slider-img.jpg" alt="" /></li>
+                <li><div id="ytplayer1"></div></li>
+                <li><div id="ytplayer2"></div></li>
               </ul>
             </div>
             <button class="arrow next"></button>
@@ -279,21 +253,12 @@
       </main>
       <!-- .content -->
       <footer class="footer">
-        <div class="f-menu">
-          <ul>
-            <li><a href="">About</a></li>
-            <li><a href="">Terms & Conditions</a></li>
-            <li><a href="">Privacy Polity</a></li>
-            <li><a href="">User Agreement</a></li>
-            <li><a href="">Community</a></li>
-          </ul>
-        </div>
         <div class="f-info">
           <div class="f-logo">
-            <a href=""><img src="images/f-logo.png" alt=""/></a>
+            <a href="/"><img src="images/logo-w.png" alt=""/></a>
           </div>
           <div class="f-text">
-            Copyright © 2018. All rights reserved. <br />
+            Copyright © 2020. All rights reserved. <br />
             Lineage 2 and all associated logos and designs are trademarks or
             registered trademarks of NCSOFT Corporation. <br />
             All other trademarks or registered trademarks are property of theirs
@@ -329,6 +294,35 @@
         );
         list.style.marginLeft = position + "px";
       };
+    </script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0"></script>
+    <script>
+      // Load the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+      // Replace the 'ytplayer' element with an <iframe> and
+      // YouTube player after the API code downloads.
+      var player1;
+      var player2;
+      function onYouTubePlayerAPIReady() {
+        player1 = new YT.Player('ytplayer1', {
+          height: '462',
+          width: '710',
+          videoId: 'pyN4Sn76mCQ',
+          playerVars: { 'autoplay': 0, 'controls': 2, 'modestbranding':1, 'showinfo':0, 'fs':0, 'rel':0, 'start':0}
+        });
+        player2 = new YT.Player('ytplayer2', {
+          height: '462',
+          width: '710',
+          videoId: '4Khu0MCmWlU',
+          playerVars: { 'autoplay': 0, 'controls': 2, 'modestbranding':1, 'showinfo':0, 'fs':0, 'rel':0, 'start':5}
+        });
+
+      }
     </script>
   </body>
 </html>

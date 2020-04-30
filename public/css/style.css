@@ -46,7 +46,7 @@ h1 span:before {
   background: url(../images/left-title-icon.png) no-repeat;
   width: 260px;
   height: 23px;
-  left: -320px;
+  left: -300px;
   top: 50%;
   margin-top: -10px;
 }
@@ -56,7 +56,7 @@ h1 span:after {
   background: url(../images/right-title-icon.png) no-repeat;
   width: 260px;
   height: 23px;
-  right: -290px;
+  right: -320px;
   top: 50%;
   margin-top: -10px;
 }
@@ -111,7 +111,7 @@ button {
 /* Header
 -----------------------------------------------------------------------------*/
 .header {
-  height: 660px;
+  height: 360px;
   position: relative;
 }
 .header-register {
@@ -196,14 +196,6 @@ button {
 }
 .status-block.offline span {
   color: #fb6f86;
-}
-.era-text {
-  position: absolute;
-  background: url(../images/era.png) no-repeat;
-  width: 487px;
-  height: 277px;
-  right: 55px;
-  top: 114px;
 }
 /* Middle
 -----------------------------------------------------------------------------*/
@@ -337,7 +329,7 @@ button {
 }
 .tabs > label {
   display: inline-block;
-  padding: 0px 0px 30px 0px;
+  padding: 0px 0px 15px 0px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -465,7 +457,7 @@ button {
   color: #eaf3fd;
   font-size: 18px;
   margin-bottom: 70px;
-  margin-top: -65px;
+  margin-top: 0px;
   z-index: 2;
 }
 .media-block:before {
@@ -474,6 +466,7 @@ button {
   background: url(../images/media-block-bg.png) center top no-repeat;
   width: 100%;
   height: 635px;
+  margin-top: -80px;
   z-index: -1;
   left: 0;
 }
@@ -603,7 +596,7 @@ button {
 }
 .f-info {
   display: flex;
-  color: #adc0cf;
+  color: #C4C8CE;
   font-size: 14px;
   align-items: center;
 }
@@ -612,6 +605,10 @@ button {
 }
 .f-info .f-text {
   line-height: 1.2;
+}
+.f-logo a img{
+  width:172px;
+  height: 57px;
 }
 
 .register {
@@ -815,13 +812,31 @@ button {
 }
 
 .download {
-  width: 80%;
+  position: relative;
+  width: 60%;
   margin: auto;
   height: 580px;
-  background-color: #fff;
   margin-top: 50px;
+  margin-left: 500px;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.download .background .content {
+
+}
+.download .background {
+  background-color: #c8d6e5;
+  opacity: 0.9;
+  width: 100%;
+  height: 580px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
 }
 
 .download--subtitle {
@@ -898,4 +913,15 @@ button {
   height: 30px;
   position: relative;
   z-index: 2;
+}
+.fb-insta {
+  display:flex;
+  flex-direction:column;
+  margin-left:20px;
+}
+.fb-insta div{
+  margin-bottom:20px;
+}
+.media-block iframe{
+  margin-top:10px;
 }
