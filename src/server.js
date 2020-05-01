@@ -25,8 +25,9 @@ app.use(bodyParser.json());
 app.use(Site);
 app.use("/api", Api);
 
-app.listen(80);
-// dbModels.sequelize.sync().then(() => {
+
+dbModels.sequelize.sync().then(() => {
+    app.listen(80);
 //   https
 //     .createServer(
 //       {
@@ -45,4 +46,4 @@ app.listen(80);
 //       res.end();
 //     })
 //     .listen(80, () => console.log("HTTP redirection server running"));
-// });
+});
