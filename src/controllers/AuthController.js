@@ -18,7 +18,6 @@ export default {
     const user = await model.accounts.findOne({
       where: { [Op.and]: { email, password: encryptedPassword } },
     });
-
     if (user) {
       const { login, name } = user;
       const token = jwt.sign({ login, email, name }, process.env.JWT_SECRET);

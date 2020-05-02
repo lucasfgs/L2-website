@@ -25,25 +25,24 @@ app.use(bodyParser.json());
 app.use(Site);
 app.use("/api", Api);
 
-
 dbModels.sequelize.sync().then(() => {
-    app.listen(80);
-//   https
-//     .createServer(
-//       {
-//         key: fs.readFileSync(process.env.SSL_KEY),
-//         cert: fs.readFileSync(process.env.SSL_CERT),
-//       },
-//       app
-//     )
-//     .listen(443, () => console.log("SSL server running"));
+  app.listen(80);
+  //   https
+  //     .createServer(
+  //       {
+  //         key: fs.readFileSync(process.env.SSL_KEY),
+  //         cert: fs.readFileSync(process.env.SSL_CERT),
+  //       },
+  //       app
+  //     )
+  //     .listen(443, () => console.log("SSL server running"));
 
-//   http
-//     .createServer((req, res) => {
-//       res.writeHead(301, {
-//         Location: "https://" + req.headers["host"] + req.url,
-//       });
-//       res.end();
-//     })
-//     .listen(80, () => console.log("HTTP redirection server running"));
+  //   http
+  //     .createServer((req, res) => {
+  //       res.writeHead(301, {
+  //         Location: "https://" + req.headers["host"] + req.url,
+  //       });
+  //       res.end();
+  //     })
+  //     .listen(80, () => console.log("HTTP redirection server running"));
 });
