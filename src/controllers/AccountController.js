@@ -79,4 +79,11 @@ export default {
 
     res.render("confirm", { success: true });
   },
+
+  async getCoins(req, res) {
+    const { login } = req.user;
+    const account = await model.accounts.findOne({ where: { login } });
+    res.json({ coins: account.wallet_amount });
+    console.log(account);
+  },
 };
