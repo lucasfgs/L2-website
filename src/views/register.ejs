@@ -24,11 +24,11 @@
           <li><a href="/">Home</a></li>
           <li><a href="/download">Download files</a></li>
           <li class="active"><a href="/register">Register</a></li>
-          <li><a href="">About server</a></li>
+          <!-- <li><a href="">About server</a></li> -->
         </ul>
       </div>
       <div class="login">
-        <a href="">Login</a> or <a href="" class="sign">Sign Up</a>
+        <a href="">Login</a>
       </div>
     </div>
     <!-- top-panel -->
@@ -37,10 +37,7 @@
         <div class="register">
           <% if (locals.success) { %>
           <div class="register--success">
-            <h3 class="success--title">Account created successful!</h3>
-            <p class="success--description">
-              Check your e-mail for account activation.
-            </p>
+            <h3 class="success--title">Conta criada com sucesso!</h3>
           </div>
 
           <% } else { %>

@@ -1,103 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <!--[if lt IE 9
+  <head>
+    <meta charset="utf-8" />
+    <!--[if lt IE 9
       ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script
     ><![endif]-->
-  <title>Lineage 2 Thorin</title>
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=1280, maximum-scale=1" />
-  <link href="css/css-reset.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-</head>
+    <title>Lineage 2 Thorin</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=1280, maximum-scale=1" />
+    <link href="css/css-reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
 
-<body>
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v6.0'
-    });
-  };
+  <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: "v6.0",
+        });
+      };
 
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/pt_BR/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/pt_BR/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
 
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="111756093759041"
-theme_color="#819CB7"
-logged_in_greeting="Olá! Como podemos te ajudar?"
-logged_out_greeting="Olá! Como podemos te ajudar?">
-</div>
-  <div class="top-panel">
-    <div class="logo">
-      <a href="/"><img src="images/logo5.png" alt="" /></a>
-    </div>
-    <div class="menu">
-      <ul>
-        <li class="active"><a href="">Home</a></li>
-        <li><a href="/download">Downloads</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="">About server</a></li>
-      </ul>
-    </div>
-    <div class="login">
-      <a href="">Login</a>
-    </div>
-  </div>
-  <!-- top-panel -->
-  <div class="wrapper">
-    <header class="header">
-      <div class="status-block <%=serverStatus.toLowerCase()%>">
-        <span><%=serverStatus%></span>
-        <%=playersOnline%> Players
+    <!-- Your customer chat code -->
+    <div
+      class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="111756093759041"
+      theme_color="#819CB7"
+      logged_in_greeting="Olá! Como podemos te ajudar?"
+      logged_out_greeting="Olá! Como podemos te ajudar?"
+    ></div>
+    <div class="top-panel">
+      <div class="logo">
+        <a href="/"><img src="images/logo5.png" alt="" /></a>
       </div>
-      <!-- status-block -->
-      <!-- era-text -->
-    </header>
-    <!-- .header-->
-    <main class="content">
-      <div class="block-info">
-        <div class="slider">
-          <div class="next"></div>
-          <div class="prev"></div>
-          <div class="slides">
-            <div class="slide active">
-              <img src="images/slider-1.png" alt="" />
-            </div>
-            <div class="slide">
-              <img src="images/slider-2.png" alt="" />
-            </div>
-            <div class="slide">
-              <img src="images/slider-3.png" alt="" />
-            </div>
-          </div>
-          <div class="navigation"></div>
+      <div class="menu">
+        <ul>
+          <li class="active"><a href="">Home</a></li>
+          <li><a href="/download">Downloads</a></li>
+          <li><a href="/register">Register</a></li>
+          <!-- <li><a href="">About server</a></li> -->
+        </ul>
+      </div>
+      <div class="login">
+        <a href="">Login</a>
+      </div>
+    </div>
+    <!-- top-panel -->
+    <div class="wrapper">
+      <header class="header">
+        <div class="status-block <%=serverStatus.toLowerCase()%>">
+          <span><%=serverStatus%></span>
+          <%=playersOnline%> Players
         </div>
-        <!-- slider -->
-        <div class="news-block">
-          <div class="tabs">
-            <input id="all-news" type="radio" name="tabs" checked />
-            <label for="all-news" title="All news">Noticias</label>
-            <div id="all-news-content" class="tab">
-              <ul>
-                <li>
-                  <a href="" title="Special week event!"><span class="new">[NEW]</span> Special week event!</a>
-                  <span class="date">22.10</span>
-                </li>
-                <li>
+        <!-- status-block -->
+        <!-- era-text -->
+      </header>
+      <!-- .header-->
+      <main class="content">
+        <div class="block-info">
+          <div class="slider">
+            <div class="next"></div>
+            <div class="prev"></div>
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/slider-1.png" alt="" />
+              </div>
+              <div class="slide">
+                <img src="images/slider-2.png" alt="" />
+              </div>
+              <div class="slide">
+                <img src="images/slider-3.png" alt="" />
+              </div>
+            </div>
+            <div class="navigation"></div>
+          </div>
+          <!-- slider -->
+          <div class="news-block">
+            <div class="tabs">
+              <input id="all-news" type="radio" name="tabs" checked />
+              <label for="all-news" title="All news">Notícias</label>
+              <div id="all-news-content" class="tab">
+                <!-- <canvas id="countdown"></canvas> -->
+                <ul>
+                  <li>
+                    <a href="" title="Special week event!"
+                      ><span class="new">[NEW]</span> Servidor online!</a
+                    >
+                    <span class="date">14:00</span>
+                  </li>
+                  <!-- <li>
                   <a href=""
                     title="Bonus start avaiable for new players! Bonus start avaiable for new players! Bonus start avaiable for new players!"><span
                       class="new">[NEW]</span> Bonus start avaiable for
@@ -184,158 +190,318 @@ logged_out_greeting="Olá! Como podemos te ajudar?">
                   <a href="" title="Special boost exp event!"><span class="new">[NEW]</span> Special boost exp
                     event!</a>
                   <span class="date">22.10</span>
-                </li>
-              </ul>
+                </li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- news-block -->
+        </div>
+        <!-- block-info -->
+        <div class="block-btn">
+          <div class="game-info game">
+            <div class="g-text">
+              <span class="game-g">RANKING</span>
+              <span class="game-t">PVP</span>
+              <a href="">GO</a>
+            </div>
+          </div>
+          <div class="game-stats game">
+            <div class="g-text">
+              <span class="game-g">RANKING</span>
+              <span class="game-t"> PK</span>
+              <a href="">GO</a>
+            </div>
+          </div>
+          <div class="game-community game">
+            <div class="g-text">
+              <span class="game-g">SPAWN</span>
+              <span class="game-t">RAID BOSS</span>
+              <a href="">GO</a>
             </div>
           </div>
         </div>
-        <!-- news-block -->
-      </div>
-      <!-- block-info -->
-      <div class="block-btn">
-        <div class="game-info game">
-          <div class="g-text">
-            <span class="game-g">RANKING</span>
-            <span class="game-t">PVP</span>
-            <a href="">GO</a>
+        <!-- block-btn -->
+        <div class="hr"></div>
+        <div class="media-block">
+          <iframe
+            src="https://discordapp.com/widget?id=682678860680265843&theme=dark"
+            width="350"
+            height="530"
+            allowtransparency="true"
+            frameborder="0"
+          ></iframe>
+          <div class="fb-insta">
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/Lineage-2-Thorin-111756093759041/"
+              data-tabs=""
+              data-width=""
+              data-height=""
+              data-small-header="false"
+              data-adapt-container-width="false"
+              data-hide-cover="false"
+              data-show-facepile="false"
+            >
+              <blockquote
+                cite="https://www.facebook.com/Lineage-2-Thorin-111756093759041/"
+                class="fb-xfbml-parse-ignore"
+              >
+                <a
+                  href="https://www.facebook.com/Lineage-2-Thorin-111756093759041/"
+                  >Lineage 2 Thorin</a
+                >
+              </blockquote>
+            </div>
+            <iframe
+              src="http://instagram.com/p/B_mWbbVgFrc/embed"
+              width="340"
+              height="380"
+              frameborder="0"
+              scrolling="no"
+              allowtransparency="true"
+            ></iframe>
           </div>
         </div>
-        <div class="game-stats game">
-          <div class="g-text">
-            <span class="game-g">RANKING</span>
-            <span class="game-t"> PK</span>
-            <a href="">GO</a>
+        <!-- art-block -->
+        <div class="feature-block">
+          <h1>
+            <span
+              >Galeria de<br />
+              <b>Videos</b></span
+            >
+          </h1>
+          <div id="carousel" class="carousel">
+            <button class="arrow prev"></button>
+            <div class="gallery">
+              <ul class="images">
+                <li>
+                  <div id="ytplayer1"></div>
+                </li>
+                <li>
+                  <div id="ytplayer2"></div>
+                </li>
+              </ul>
+            </div>
+            <button class="arrow next"></button>
           </div>
         </div>
-        <div class="game-community game">
-          <div class="g-text">
-            <span class="game-g">SPAWN</span>
-            <span class="game-t">RAID BOSS</span>
-            <a href="">GO</a>
+        <!-- feature-block -->
+      </main>
+      <!-- .content -->
+      <footer class="footer">
+        <div class="f-info">
+          <div class="f-logo">
+            <a href="/"><img src="images/logo-w.png" alt="" /></a>
+          </div>
+          <div class="f-text">
+            Copyright © 2020. All rights reserved. <br />
+            Lineage 2 and all associated logos and designs are trademarks or
+            registered trademarks of NCSOFT Corporation. <br />
+            All other trademarks or registered trademarks are property of theirs
+            respective owners. It's only a Test Server. <br />
+            All rights belong to NCSOFT.
           </div>
         </div>
-      </div>
-      <!-- block-btn -->
-      <div class="hr"></div>
-      <div class="media-block">
-        <iframe src="https://discordapp.com/widget?id=682678860680265843&theme=dark" width="350" height="530"
-          allowtransparency="true" frameborder="0"></iframe>
-        <div class='fb-insta'>
-          <div class="fb-page" data-href="https://www.facebook.com/Lineage-2-Thorin-111756093759041/" data-tabs=""
-            data-width="" data-height="" data-small-header="false" data-adapt-container-width="false"
-            data-hide-cover="false" data-show-facepile="false">
-            <blockquote cite="https://www.facebook.com/Lineage-2-Thorin-111756093759041/" class="fb-xfbml-parse-ignore">
-              <a href="https://www.facebook.com/Lineage-2-Thorin-111756093759041/">Lineage 2 Thorin</a></blockquote>
-          </div>
-          <iframe src="http://instagram.com/p/B_mWbbVgFrc/embed" width="340" height="380" frameborder="0" scrolling="no"
-            allowtransparency="true"></iframe>
-        </div>
-      </div>
-      <!-- art-block -->
-      <div class="feature-block">
-        <h1>
-          <span>Galeria de<br />
-            <b>Videos</b></span>
-        </h1>
-        <div id="carousel" class="carousel">
-          <button class="arrow prev"></button>
-          <div class="gallery">
-            <ul class="images">
-              <li>
-                <div id="ytplayer1"></div>
-              </li>
-              <li>
-                <div id="ytplayer2"></div>
-              </li>
-            </ul>
-          </div>
-          <button class="arrow next"></button>
-        </div>
-      </div>
-      <!-- feature-block -->
-    </main>
-    <!-- .content -->
-    <footer class="footer">
-      <div class="f-info">
-        <div class="f-logo">
-          <a href="/"><img src="images/logo-w.png" alt="" /></a>
-        </div>
-        <div class="f-text">
-          Copyright © 2020. All rights reserved. <br />
-          Lineage 2 and all associated logos and designs are trademarks or
-          registered trademarks of NCSOFT Corporation. <br />
-          All other trademarks or registered trademarks are property of theirs
-          respective owners. It's only a Test Server. <br />
-          All rights belong to NCSOFT.
-        </div>
-      </div>
-    </footer>
-    <!-- .footer -->
-  </div>
-  <!-- .wrapper -->
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/slider.js"></script>
-  <script>
-    var width = 714;
-    var count = 1;
+      </footer>
+      <!-- .footer -->
+    </div>
+    <!-- .wrapper -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script>
+      var width = 714;
+      var count = 1;
 
-    var carousel = document.getElementById("carousel");
-    var list = carousel.querySelector("ul");
-    var listElems = carousel.querySelectorAll("li");
+      var carousel = document.getElementById("carousel");
+      var list = carousel.querySelector("ul");
+      var listElems = carousel.querySelectorAll("li");
 
-    var position = 0;
+      var position = 0;
 
-    carousel.querySelector(".prev").onclick = function () {
-      position = Math.min(position + width * count, 0);
-      list.style.marginLeft = position + "px";
-    };
+      carousel.querySelector(".prev").onclick = function () {
+        position = Math.min(position + width * count, 0);
+        list.style.marginLeft = position + "px";
+      };
 
-    carousel.querySelector(".next").onclick = function () {
-      position = Math.max(
-        position - width * count,
-        -width * (listElems.length - count)
-      );
-      list.style.marginLeft = position + "px";
-    };
-  </script>
+      carousel.querySelector(".next").onclick = function () {
+        position = Math.max(
+          position - width * count,
+          -width * (listElems.length - count)
+        );
+        list.style.marginLeft = position + "px";
+      };
+    </script>
 
+    <!-- Load Facebook SDK for JavaScript -->
 
+    <!-- PAGINA DO FACBOOK -->
 
-
-  <!-- Load Facebook SDK for JavaScript -->
-
-  <!-- PAGINA DO FACBOOK -->
-  
-  <!-- <script async defer crossorigin="anonymous"
+    <!-- <script async defer crossorigin="anonymous"
     src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0"></script> -->
 
-  <script>
-    // Load the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/player_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    <script>
+      // Load the IFrame Player API code asynchronously.
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    // Replace the 'ytplayer' element with an <iframe> and
-    // YouTube player after the API code downloads.
-    var player1;
-    var player2;
-    function onYouTubePlayerAPIReady() {
-      player1 = new YT.Player('ytplayer1', {
-        height: '462',
-        width: '710',
-        videoId: 'pyN4Sn76mCQ',
-        playerVars: { 'autoplay': 0, 'controls': 2, 'modestbranding': 1, 'showinfo': 0, 'fs': 0, 'rel': 0, 'start': 0 }
-      });
-      player2 = new YT.Player('ytplayer2', {
-        height: '462',
-        width: '710',
-        videoId: '4Khu0MCmWlU',
-        playerVars: { 'autoplay': 0, 'controls': 2, 'modestbranding': 1, 'showinfo': 0, 'fs': 0, 'rel': 0, 'start': 5 }
-      });
+      // Replace the 'ytplayer' element with an <iframe> and
+      // YouTube player after the API code downloads.
+      var player1;
+      var player2;
+      function onYouTubePlayerAPIReady() {
+        player1 = new YT.Player("ytplayer1", {
+          height: "462",
+          width: "710",
+          videoId: "pyN4Sn76mCQ",
+          playerVars: {
+            autoplay: 0,
+            controls: 2,
+            modestbranding: 1,
+            showinfo: 0,
+            fs: 0,
+            rel: 0,
+            start: 0,
+          },
+        });
+        player2 = new YT.Player("ytplayer2", {
+          height: "462",
+          width: "710",
+          videoId: "4Khu0MCmWlU",
+          playerVars: {
+            autoplay: 0,
+            controls: 2,
+            modestbranding: 1,
+            showinfo: 0,
+            fs: 0,
+            rel: 0,
+            start: 5,
+          },
+        });
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var ringer = {
+        countdown_to: "5/2/2020 14:00:00",
+        rings: {
+          DAYS: {
+            s: 86400000, // mseconds in a day,
+            max: 365,
+          },
+          HOURS: {
+            s: 3600000, // mseconds per hour,
+            max: 24,
+          },
+          MINUTES: {
+            s: 60000, // mseconds per minute
+            max: 60,
+          },
+          SECONDS: {
+            s: 1000,
+            max: 60,
+          },
+        },
+        r_count: 4,
+        r_spacing: 10, // px
+        r_size: 100, // px
+        r_thickness: 2, // px
+        update_interval: 11, // ms
 
-    }
-  </script>
-</body>
+        init: function () {
+          $r = ringer;
+          $r.cvs = document.getElementById("countdown");
 
+          $r.size = {
+            w:
+              ($r.r_size + $r.r_thickness) * $r.r_count +
+              $r.r_spacing * ($r.r_count - 1),
+            h: $r.r_size + $r.r_thickness,
+          };
+
+          $r.cvs.setAttribute("width", $r.size.w);
+          $r.cvs.setAttribute("height", $r.size.h);
+          $r.ctx = $r.cvs.getContext("2d");
+          $r.cvs = $($r.cvs);
+          $r.ctx.textAlign = "center";
+          $r.actual_size = $r.r_size + $r.r_thickness;
+          $r.countdown_to_time = new Date($r.countdown_to).getTime();
+          $r.cvs.css({ width: $r.size.w + "px", height: $r.size.h + "px" });
+          $r.go();
+        },
+        ctx: null,
+        go: function () {
+          var idx = 0;
+
+          $r.time = new Date().getTime() - $r.countdown_to_time;
+
+          for (var r_key in $r.rings) $r.unit(idx++, r_key, $r.rings[r_key]);
+
+          setTimeout($r.go, $r.update_interval);
+        },
+        unit: function (idx, label, ring) {
+          var x,
+            y,
+            value,
+            ring_secs = ring.s;
+          value = parseFloat($r.time / ring_secs);
+          $r.time -= Math.round(parseInt(value)) * ring_secs;
+          value = Math.abs(value);
+
+          x = $r.r_size * 0.5 + $r.r_thickness * 0.5;
+          x += +(idx * ($r.r_size + $r.r_spacing + $r.r_thickness));
+          y = $r.r_size * 0.5;
+          y += $r.r_thickness * 0.5;
+
+          // calculate arc end angle
+          var degrees = 360 - (value / ring.max) * 360.0;
+          var endAngle = degrees * (Math.PI / 180);
+
+          $r.ctx.save();
+
+          $r.ctx.translate(x, y);
+          $r.ctx.clearRect(
+            $r.actual_size * -0.5,
+            $r.actual_size * -0.5,
+            $r.actual_size,
+            $r.actual_size
+          );
+
+          // first circle
+          $r.ctx.strokeStyle = "rgba(128,128,128,0.4)";
+          $r.ctx.beginPath();
+          $r.ctx.arc(0, 0, $r.r_size / 2, 0, 2 * Math.PI, 2);
+          $r.ctx.lineWidth = $r.r_thickness;
+          $r.ctx.stroke();
+
+          // second circle
+          $r.ctx.strokeStyle = "rgba(253, 128, 1, 0.9)";
+          $r.ctx.beginPath();
+          $r.ctx.arc(0, 0, $r.r_size / 2, 0, endAngle, 1);
+          $r.ctx.lineWidth = $r.r_thickness;
+          $r.ctx.stroke();
+
+          // label
+          $r.ctx.fillStyle = "#000";
+
+          $r.ctx.font = "12px Helvetica";
+          $r.ctx.fillText(label, 0, 23);
+          $r.ctx.fillText(label, 0, 23);
+
+          $r.ctx.font = "bold 40px Helvetica";
+          $r.ctx.fillText(Math.floor(value), 0, 10);
+
+          $r.ctx.restore();
+        },
+      };
+
+      ringer.init();
+    </script>
+  </body>
 </html>

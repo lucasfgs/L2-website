@@ -84,6 +84,14 @@ export default {
     const { login } = req.user;
     const account = await model.accounts.findOne({ where: { login } });
     res.json({ coins: account.wallet_amount });
-    console.log(account);
+  },
+
+  async getCharacters(req, res) {
+    const { login } = req.user;
+    const characters = await model.characters.findAll({
+      attributes: ["charId", "char_name"],
+      where: { account_name: login },
+    });
+    res.send(characters);
   },
 };

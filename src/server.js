@@ -26,10 +26,6 @@ app.use(bodyParser.json());
 app.use(Site);
 app.use("/api", Api);
 
-app.get("/dashboard", (req, res) => {
-  res.sendFile(path.resolve("react", "index.html"));
-});
-
 dbModels.sequelize.sync().then(() => {
   app.listen(80);
   //   https
