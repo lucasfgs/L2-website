@@ -37,6 +37,11 @@ module.exports = function(sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING(50),
       allowNull: true
+    },
+    wallet_amount: {
+      type: DataTypes.INTEGER(11),
+      allowNull: true,
+      defaultValue: '0'
     }
   }, {
     tableName: 'accounts'
