@@ -11,6 +11,7 @@ const routes = Router();
 // });
 
 // ATIVAR QUANDO O SITE ENTRAR AO AR
+
 routes.get("/", async (req, res) => {
   getGameserverStatus()
     .then(async (serverStatus) => {

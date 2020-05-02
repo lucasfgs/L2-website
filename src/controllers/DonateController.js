@@ -38,14 +38,9 @@ export default {
       created_at,
     });
 
-    const account = await model.accounts.update(
-      { wallet_amount: coins },
-      {
-        where: {
-          login,
-        },
-      }
-    );
+    let account = await model.accounts.findOne({ where: { login } });
+    let currentCoins = parseInt(account.wallet_amount) + parseInt(coins);
+    account = await account.update({ wallet_amount: currentCoins });
 
     if (donate && account) {
       res.json({ success: true });
