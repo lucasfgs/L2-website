@@ -6,9 +6,14 @@ export default {
 
     const donates = await model.donate.findAll({
       where: { user_login: login },
+      order: [["created_at", "DESC"]],
+      limit: 10,
     });
-
-    res.send(donates);
+    if (donates.length > 0) {
+      res.send(donates);
+    } else {
+      res.json({ error: true, message: "Nenhum donate realizado" });
+    }
   },
   async store(req, res) {
     const {
